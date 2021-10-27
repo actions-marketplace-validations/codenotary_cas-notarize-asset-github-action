@@ -1,0 +1,30 @@
+name: notarize-sample-asset
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  notarize-docker-image:
+    runs-on: ubuntu-latest
+
+    services:
+      registry:
+        image: registry:2
+        ports:
+          - 5000:5000
+
+    steps:
+      # Pull an image to notarize; This is where you'd build your local image instead using your preferred method
+      - name: debug
+        run: docker pull codenotary/cas:latest
+        shell: bash
+
+
+      - name: Notarize sample asset
+        #--> Run the GitHub action
+        uses: codenotary/cas-notarize-asset-github-action@main
+        with:
+          # Whatever asset is being notarized, can be a target/ or dist/ compiled binary or any type of file
+          asset: Asset.txt
+          cas_api_key: ${{ secrets.CAS_API_KEY }}

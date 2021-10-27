@@ -1,0 +1,20 @@
+name: 'cas notarize asset'
+description: 'Uses the cas CLI to notarize digital assets'
+branding:
+  icon: 'lock'
+  color: 'green'
+inputs:
+  asset:
+    description: 'Asset to notarize'
+    required: true
+  cas_api_key:
+    description: 'API Key provided upon signing up through cas.codenotary.com'
+    required: true
+runs:
+  using: 'docker'
+  image: 'docker://codenotary/cas:latest'
+  args:
+    - n
+    - ${{ inputs.asset }}
+    - --api-key=${{ inputs.cas_api_key }}
+    - --host=cas.codenotary.com
