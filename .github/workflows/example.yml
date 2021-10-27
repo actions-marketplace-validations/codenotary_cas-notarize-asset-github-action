@@ -5,22 +5,9 @@ on:
     branches: [main]
 
 jobs:
-  notarize-docker-image:
+  notarize-sample-asset:
     runs-on: ubuntu-latest
-
-    services:
-      registry:
-        image: registry:2
-        ports:
-          - 5000:5000
-
     steps:
-      # Pull an image to notarize; This is where you'd build your local image instead using your preferred method
-      - name: debug
-        run: docker pull codenotary/cas:latest
-        shell: bash
-
-
       - name: Notarize sample asset
         #--> Run the GitHub action
         uses: codenotary/cas-notarize-asset-github-action@main
