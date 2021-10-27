@@ -8,6 +8,9 @@ jobs:
   notarize-sample-asset:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+    
       - name: Notarize sample asset
         #--> Run the GitHub action
         uses: codenotary/cas-notarize-asset-github-action@main
