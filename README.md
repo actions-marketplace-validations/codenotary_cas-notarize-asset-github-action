@@ -1,6 +1,6 @@
-# cas-notarize-docker-image-github-action
+# cas-notarize-asset-github-action
 
-GitHub action that uses the **[cas](https://github.com/codenotary/cas)** tool to notarize docker images.
+GitHub action that uses the **[cas](https://github.com/codenotary/cas)** tool to notarize digital assets.
 
 ## How to use it
 
