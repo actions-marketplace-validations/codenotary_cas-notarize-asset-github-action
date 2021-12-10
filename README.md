@@ -1,6 +1,6 @@
 # cas-notarize-asset-github-action
 
-GitHub action that uses the **[cas](https://github.com/codenotary/cas)** tool to notarize digital assets.
+GitHub action that uses the **[cas](https://cas.codenotary.com)** tool to notarize digital assets.
 
 ## How to use it
 
